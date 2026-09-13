@@ -226,38 +226,7 @@ False Pos.: 0
 
 ---
 
-# 📁 Repository Structure
-
-```text
-industrial-defect-detection/
-│
-├── README.md
-│
-├── dataset.py             # Data discovery, labeling, stratified train/val/test split, PyTorch Dataset/DataLoaders
-├── eda.py                 # Class distribution, sample grids, pixel-intensity distribution
-├── baseline_model.py      # Hand-crafted features + Logistic Regression baseline
-├── model.py                # ResNet18 transfer-learning architecture (DefectResNet18)
-├── train.py                # Two-phase training loop, early stopping, LR scheduling, training curves
-├── evaluate.py              # Test-set evaluation, confusion matrix, misclassified-sample analysis
-│
-├── Industrial_Defect_Detection_Technical_Report.docx   # Full data-engineering & EDA report
-├── Industrial_Defect_Detection_Presentation.pptx        # Full project presentation (baselines → transfer learning → deployment)
-│
-└── assets/
-    ├── sharpness_audit.png
-    ├── channel_distribution.png
-    ├── fft_frequency_analysis.png
-    ├── augmented_batch_preview.png
-    ├── defect_localization_heatmap.png
-    ├── class_imbalance_strategy.png
-    ├── model_comparison_chart.png
-    ├── confusion_matrices_comparison.png
-    ├── gradcam_example.png
-    └── deployment_app_screenshot.jpg
-```
-
----
-
+# 
 # 🛠️ Technologies Used
 
 | Category | Technologies |
@@ -271,41 +240,6 @@ industrial-defect-detection/
 
 ---
 
-# ▶️ How to Run
-
-Install dependencies:
-
-```bash
-pip install torch torchvision pandas numpy scikit-learn matplotlib seaborn pillow
-```
-
-**1. Baseline (classical ML):**
-
-```bash
-python baseline_model.py --data_root /path/to/DAGM2007
-```
-
-**2. EDA:**
-
-```bash
-python eda.py --data_root /path/to/DAGM2007 --output_dir outputs/eda
-```
-
-**3. Train ResNet18:**
-
-```bash
-python train.py --data_root /path/to/DAGM2007 --epochs 30 --batch_size 32
-```
-
-**4. Evaluate on the held-out test set:**
-
-```bash
-python evaluate.py --data_root /path/to/DAGM2007 --checkpoint_path best_model.pth
-```
-
-Update the dataset path inside `dataset.py` if you're not running in Google Colab (`zip_path` / `extract_path` variables near the top of the file).
-
----
 
 # 📄 License
 
